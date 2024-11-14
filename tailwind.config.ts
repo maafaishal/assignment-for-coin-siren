@@ -8,12 +8,37 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        xsm: '0.8125rem',
+      },
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
+        'blue-gray-80': '#343741',
+        'black-coral': '#5E626F',
+      },
+      backgroundImage: {
+        'main-section': "url('/imgs/main-section-bg.webp')",
+      },
+      screens: {
+        '3xl': '1920px',
+      },
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+      },
+      margin: {
+        '4.5': '1.125rem',
+        '15': '3.75rem',
+      },
+      padding: {
+        '15': '3.75rem',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addBase, theme }) {
+      addBase({
+        body: { fontWeight: theme('fontWeight.black') },
+      });
+    },
+  ],
 };
 export default config;
