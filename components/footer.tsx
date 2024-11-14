@@ -1,23 +1,27 @@
 import Image from 'next/image';
 
-import { aboutUs } from '@/data/footer';
+import type { DATA } from '@/app/api/footer/route';
 
-export function Footer() {
+import { cx } from '@/utils/cx';
+
+export async function Footer() {
+  const data = await fetch('http://localhost:3000/api/footer');
+  const footerData: typeof DATA = await data.json();
+
+  const { shortcuts, phoneNumber, email, tagLine, firstSectionInfo, secondSectionInfo } = footerData;
+
   return (
     <footer className="max-w-[1822px] w-full min-h-[505px] bg-[#FBFBFB] self-end px-4 pt-16 pb-15 text-black-coral">
       <div className="max-w-[1200px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] lg:gap-[46px]">
+        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] lg:gap-[46px_98px]">
           <div className="mb-4.5 lg:mb-0">
             <Image src="/imgs/__덉씠__1.svg" alt="logo" width={187} height={34} className="mb-4" />
-            <p className="text-sm mb-4.5 text-blue-gray-80">
-              우리는 국가의 장벽을 넘어 최고의 인재를 매<br />
-              칭해드립니다.
-            </p>
-            <p className="text-xsm mb-2">010-0000-0000</p>
-            <p className="text-xsm">aaaaa@naver.com</p>
+            <p className="text-sm mb-4.5 text-blue-gray-80 whitespace-pre-wrap">{tagLine}</p>
+            <p className="text-xsm mb-2">{phoneNumber}</p>
+            <p className="text-xsm">{email}</p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4 mb-15 lg:mb-0">
-            {aboutUs.map((about, idx) => {
+            {shortcuts.map((about, idx) => {
               return (
                 <div key={idx} className="bg-white rounded-xl p-4 flex flex-col justify-between">
                   <div className="mb-4">
@@ -35,31 +39,42 @@ export function Footer() {
             })}
           </div>
           <div className="flex mb-9 lg:mb-0 gap-2.5">
-            <div>
-              <h4 className="text-xs mb-2.5 text-blue-gray-80">상호명</h4>
-              <p className="text-xsm mb-1.5">하이퍼하이어</p>
-              <p className="text-xsm">Hyperhire India Private Limited</p>
-            </div>
-            <div>
-              <h4 className="text-xs mb-2.5 text-blue-gray-80">대표 CEO</h4>
-              <p className="text-xsm mb-1.5">김주현</p>
-              <p className="text-xsm">Juhyun Kim</p>
-            </div>
+            {firstSectionInfo.map((info, idx) => {
+              return (
+                <div key={idx}>
+                  <h4 className="text-xs mb-2.5 text-blue-gray-80">{info.label}</h4>
+                  {info.content.map((content, contentIdx) => {
+                    return (
+                      <p
+                        key={contentIdx}
+                        className={cx('text-xsm', { 'mb-1.5': contentIdx !== info.content.length - 1 })}>
+                        {content}
+                      </p>
+                    );
+                  })}
+                </div>
+              );
+            })}
           </div>
           <div className="grid gap-9 lg:flex lg:gap-10">
-            <div>
-              <h4 className="text-xs mb-2.5 text-blue-gray-80">사업자등록번호 CIN</h4>
-              <p className="text-xsm mb-1.5">427-86-01187</p>
-              <p className="text-xsm">U74110DL2016PTC290812</p>
-            </div>
-            <div>
-              <h4 className="text-xs mb-2.5 text-blue-gray-80">주소 ADDRESS</h4>
-              <p className="text-xsm mb-1.5">서울특별시 강남대로 479, 지하 1층 238호</p>
-              <p className="text-xsm">
-                D-138, Street number 11, Jagjeet Nagar, North East Delhi, New Delhi, <br />
-                110053 India
-              </p>
-            </div>
+            {secondSectionInfo.map((info, idx) => {
+              return (
+                <div key={idx}>
+                  <h4 className="text-xs mb-2.5 text-blue-gray-80">{info.label}</h4>
+                  {info.content.map((content, contentIdx) => {
+                    return (
+                      <p
+                        key={contentIdx}
+                        className={cx('text-xsm', 'whitespace-pre-wrap', {
+                          'mb-1.5': contentIdx !== info.content.length - 1,
+                        })}>
+                        {content}
+                      </p>
+                    );
+                  })}
+                </div>
+              );
+            })}
           </div>
         </div>
         <p className="text-xsm mt-9 lg:mt-12">ⓒ 2023 Hyperhire</p>
