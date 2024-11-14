@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
-import type { DATA } from '@/app/api/footer/route';
+import type { FooterData } from '@/data/footer';
 
 import { cx } from '@/utils/cx';
 
 export async function Footer() {
-  const data = await fetch('http://localhost:3000/api/footer');
-  const footerData: typeof DATA = await data.json();
+  const data = await fetch(`${process.env.__NEXT_PRIVATE_ORIGIN}/api/footer`);
+  const footerData: FooterData = await data.json();
 
   const { shortcuts, phoneNumber, email, tagLine, firstSectionInfo, secondSectionInfo } = footerData;
 
