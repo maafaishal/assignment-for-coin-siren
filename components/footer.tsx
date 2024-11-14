@@ -3,9 +3,11 @@ import Image from 'next/image';
 import type { FooterData } from '@/data/footer';
 
 import { cx } from '@/utils/cx';
+import { serverOrigin } from '@/utils/serverOrigin';
 
 export async function Footer() {
-  const data = await fetch(`${process.env.__NEXT_PRIVATE_ORIGIN}/api/footer`);
+  const origin = serverOrigin();
+  const data = await fetch(`${origin}/api/footer`);
   const footerData: FooterData = await data.json();
 
   const { shortcuts, phoneNumber, email, tagLine, firstSectionInfo, secondSectionInfo } = footerData;
