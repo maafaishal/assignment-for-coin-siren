@@ -34,6 +34,7 @@ const config: Config = {
     },
   },
   plugins: [
+    // @ts-expect-error: any is expected from the Tailwind
     function ({ addBase, theme }) {
       addBase({
         body: { fontWeight: theme('fontWeight.black') },
