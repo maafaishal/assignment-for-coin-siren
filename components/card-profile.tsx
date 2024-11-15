@@ -22,10 +22,10 @@ export function CardProfile(props: Props) {
             <Image className="w-full h-full top-0 left-0 object-cover" src="/imgs/card-flag.svg" alt="avatar" fill />
           </div>
         </div>
-        <p className="text-black md:text-2xl">Abhishek Gupta</p>
-        <p className="text-blueberry">마케팅 · 2y+</p>
+        <p className="text-black md:text-2xl animate-fadeIn">Abhishek Gupta</p>
+        <p className="text-blueberry animate-fadeIn">마케팅 · 2y+</p>
       </div>
-      <div className="flex flex-wrap justify-center text-black-coral gap-1">
+      <div className="flex flex-wrap justify-center text-black-coral gap-1 animate-fadeIn">
         <div className="px-3 py-1 text-sm border border-blue-gray-40 rounded-md">마케팅 콘텐츠 제작</div>
         <div className="px-3 py-1 text-sm border border-blue-gray-40 rounded-md">인스타그램 관리</div>
         <div className="px-3 py-1 text-sm border border-blue-gray-40 rounded-md">트위터 관리</div>

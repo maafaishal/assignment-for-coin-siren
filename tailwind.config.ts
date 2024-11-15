@@ -39,14 +39,50 @@ const config: Config = {
       padding: {
         '15': '3.75rem',
       },
+      keyframes: {
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+          },
+          '100%': {
+            opacity: '1',
+          },
+        },
+        'fade-in-up': {
+          '0%': {
+            opacity: '0',
+            transform: 'translate3d(0, 100%, 0)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translate3d(0, 0, 0)',
+          },
+        },
+      },
+      animation: {
+        fadeIn: 'fade-in 0.5s ease-in-out forwards',
+        fadeInUp: 'fade-in-up 0.5s ease-in-out forwards',
+      },
     },
   },
   plugins: [
     // @ts-expect-error: any is expected from the Tailwind
-    function ({ addBase, theme }) {
+    function ({ addBase, theme, matchUtilities }) {
       addBase({
         body: { fontWeight: theme('fontWeight.black') },
       });
+      matchUtilities(
+        {
+          'animation-delay': (value: string) => {
+            return {
+              'animation-delay': value,
+            };
+          },
+        },
+        {
+          values: theme('transitionDelay'),
+        },
+      );
     },
   ],
 };
