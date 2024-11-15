@@ -10,7 +10,7 @@ export function CardProfile(props: Props) {
   return (
     <div
       className={cx(
-        `min-w-[234px] h-full bg-white rounded-xl px-4 py-9 md:px-9 text-center drop-shadow-lg flex flex-col md:gap-9`,
+        `min-w-[234px] h-full bg-white rounded-xl px-4 py-9 md:px-9 text-center drop-shadow-lg flex flex-col gap-4 md:gap-9`,
         props.className,
       )}>
       <div>
@@ -26,10 +26,10 @@ export function CardProfile(props: Props) {
         <p className="text-blueberry animate-fadeIn">마케팅 · 2y+</p>
       </div>
       <div className="flex flex-wrap justify-center text-black-coral gap-1 animate-fadeIn">
-        <div className="px-3 py-1 text-sm border border-blue-gray-40 rounded-md">마케팅 콘텐츠 제작</div>
-        <div className="px-3 py-1 text-sm border border-blue-gray-40 rounded-md">인스타그램 관리</div>
-        <div className="px-3 py-1 text-sm border border-blue-gray-40 rounded-md">트위터 관리</div>
-        <div className="px-3 py-1 text-sm border border-blue-gray-40 rounded-md">블로그 글 작성</div>
+        <div className="px-3 py-1 text-sm md:text-base border border-blue-gray-40 rounded-md">마케팅 콘텐츠 제작</div>
+        <div className="px-3 py-1 text-sm md:text-base border border-blue-gray-40 rounded-md">인스타그램 관리</div>
+        <div className="px-3 py-1 text-sm md:text-base border border-blue-gray-40 rounded-md">트위터 관리</div>
+        <div className="px-3 py-1 text-sm md:text-base border border-blue-gray-40 rounded-md">블로그 글 작성</div>
       </div>
     </div>
   );

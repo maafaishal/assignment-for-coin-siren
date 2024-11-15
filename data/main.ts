@@ -20,7 +20,7 @@ export const mainData = {
     },
     {
       image: '/imgs/main-slider-5.svg',
-      title: '해외 마케팅',
+      title: '해외 CS',
     },
   ],
 };

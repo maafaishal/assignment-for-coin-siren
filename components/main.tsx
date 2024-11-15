@@ -32,8 +32,9 @@ export async function Main() {
               외국인 인재를 찾고 계신가요?
             </h1>
             <p className="opacity-80 font-black text-lg md:text-2xl animate-fadeInUp">
-              법률 및 인사관리 부담없이 1주일 이내에 원격
-              <br />
+              법률 및 인사관리 부담없이 <br className="hidden md:block" />
+              1주일 이내에 원격
+              <br className="md:hidden" />
               으로 채용해보세요.
             </p>
             <p className="hidden md:block mt-6 text-lg underline">개발자가 필요하신가요?</p>
@@ -70,8 +71,8 @@ export async function Main() {
                 <Image className="rotate-180" src="/imgs/caret-right.svg" alt="avatar" height={24} width={24} />
               </div>
               <div className="flex-grow relative flex items-center justify-center">
-                <CardProfile className="max-w-[234px] md:max-w-[292px] h-[287px] md:h-[366px] md:gap-4 absolute top-0 bottom-0 left-0 bg-azure my-auto" />
-                <CardProfile className="max-w-[234px] md:max-w-[292px] h-[287px] md:h-[366px] md:gap-4 absolute top-0 bottom-0 right-0 bg-azure my-auto" />
+                <CardProfile className="max-w-[234px] md:max-w-[292px] h-[287px] md:h-[366px] gap-0 md:gap-4 absolute top-0 bottom-0 left-0 bg-azure my-auto" />
+                <CardProfile className="max-w-[234px] md:max-w-[292px] h-[287px] md:h-[366px] gap-0 md:gap-4 absolute top-0 bottom-0 right-0 bg-azure my-auto" />
                 <CardProfile className="max-w-[234px] md:max-w-[292px] h-[311px] md:h-[408px] z-10" />
               </div>
               <div className="md:ml-[23px]">
@@ -79,7 +80,7 @@ export async function Main() {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap gap-2 md:hidden mt-6">
+          <div className="grid grid-cols-[109px_auto] gap-2 md:hidden mt-6">
             <div className="flex items-center">
               <Image className="" src="/imgs/checkbox.svg" alt="check" height={20} width={20} />
               <p className="ml-3">한국어 능력</p>
