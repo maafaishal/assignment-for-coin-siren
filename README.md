@@ -12,3 +12,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Screenshots
 ![image](https://github.com/user-attachments/assets/21f2f751-9c9f-4c37-b207-34effad61817)
+
+## APIs
+
+1. /api/main
+   
+An API for the Main component
+
+2. /api/footer
+   
+An API for the Footer component
