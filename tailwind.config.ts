@@ -21,6 +21,7 @@ const config: Config = {
         'light-sky-blue': '#8BC4FF',
         'off-green': '#E9F7EF',
         turquoise: '#40E2E8',
+        'yellow-sun': '#FBFF23',
       },
       backgroundImage: {
         'main-section': "url('/imgs/main-section-bg.webp')",

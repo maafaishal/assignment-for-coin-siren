@@ -4,7 +4,7 @@ import { CardProfile } from './card-profile';
 
 export function Main() {
   return (
-    <main className="w-full bg-gradient-to-br from-[#26C2B9] to-[#288BE7] pt-15 pb-28 px-4 relative max-w-[1828px] text-white md:mb-4 overflow-x-hidden">
+    <main className="w-full bg-gradient-to-br from-[#26C2B9] to-[#288BE7] pt-15 pb-15 md:pb-28 px-4 relative max-w-[1828px] text-white md:mb-4 overflow-x-hidden">
       <div className="relative z-10 max-w-[1200px] mx-auto pt-9 md:pt-[100px]">
         <div className="grid md:grid-cols-2 md:gap-3">
           <div className="mb-9">
@@ -30,18 +30,18 @@ export function Main() {
             <div className="hidden md:grid grid-cols-3 mt-15 gap-12">
               <div>
                 <div className="border-t border-t-white w-[129px]" />
-                <p className="mt-2">평균 월 120만원</p>
-                <p className="mt-2">임금을 해당 국가를 기준으로 계산합니다.</p>
+                <p className="mt-2 text-lg">평균 월 120만원</p>
+                <p className="mt-2 opacity-80">임금을 해당 국가를 기준으로 계산합니다.</p>
               </div>
               <div>
                 <div className="border-t border-t-white w-[129px]" />
-                <p className="mt-2">최대 3회 인력교체</p>
-                <p className="mt-2">막상 채용해보니 맞지 않아도 걱정하지 마세요.</p>
+                <p className="mt-2 text-lg">최대 3회 인력교체</p>
+                <p className="mt-2 opacity-80">막상 채용해보니 맞지 않아도 걱정하지 마세요.</p>
               </div>
               <div>
                 <div className="border-t border-t-white w-[129px]" />
-                <p className="mt-2">평균 3일, 최대 10일</p>
-                <p className="mt-2">급하게 사람이 필요한 경우에도 빠른 채용이 가능합니다.</p>
+                <p className="mt-2 text-lg">평균 3일, 최대 10일</p>
+                <p className="mt-2 opacity-80">급하게 사람이 필요한 경우에도 빠른 채용이 가능합니다.</p>
               </div>
             </div>
           </div>
@@ -69,6 +69,25 @@ export function Main() {
               </div>
             </div>
           </div>
+          <div className="flex flex-wrap gap-2 md:hidden mt-6">
+            <div className="flex items-center">
+              <Image className="" src="/imgs/checkbox.svg" alt="check" height={20} width={20} />
+              <p className="ml-3">한국어 능력</p>
+            </div>
+            <div className="flex items-center">
+              <Image className="" src="/imgs/checkbox.svg" alt="check" height={20} width={20} />
+              <p className="ml-3">업무 수행 능력</p>
+            </div>
+            <div className="flex items-center">
+              <Image className="" src="/imgs/checkbox.svg" alt="check" height={20} width={20} />
+              <p className="ml-3">겸업 여부</p>
+            </div>
+            <div className="flex items-center">
+              <Image className="" src="/imgs/checkbox.svg" alt="check" height={20} width={20} />
+              <p className="ml-3">평판 조회</p>
+            </div>
+          </div>
+          <p className="md:hidden text-yellow-sun mt-4 underline">개발자가 필요하신가요?</p>
         </div>
         <div>
           <div className="flex md:hidden"></div>
