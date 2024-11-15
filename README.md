@@ -11,7 +11,8 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Screenshots
-![image](https://github.com/user-attachments/assets/21f2f751-9c9f-4c37-b207-34effad61817)
+![image](https://github.com/user-attachments/assets/fd8c0d45-9e84-4522-91d0-eb13092ac321)
+
 
 ## APIs
 
