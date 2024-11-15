@@ -12,8 +12,15 @@ const config: Config = {
         xsm: '0.8125rem',
       },
       colors: {
+        azure: '#EDFCFF',
+        blueberry: '#4A77FF',
+        'blue-gray-40': '#C1C5CF',
         'blue-gray-80': '#343741',
         'black-coral': '#5E626F',
+        'trabuddy-alternative': '#00C696',
+        'light-sky-blue': '#8BC4FF',
+        'off-green': '#E9F7EF',
+        turquoise: '#40E2E8',
       },
       backgroundImage: {
         'main-section': "url('/imgs/main-section-bg.webp')",
