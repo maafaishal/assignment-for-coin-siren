@@ -56,7 +56,7 @@ export async function Main() {
               </div>
             </div>
           </div>
-          <div>
+          <div className="md:-mt-10">
             <div className="relative mb-6 flex justify-center animate-fadeIn">
               <div className="h-12 px-4 py-2 bg-off-green text-trabuddy-alternative rounded-lg text-lg font-black flex justify-center items-center">
                 <Image src="/imgs/dollar-round.svg" alt="icon" height={26} width={26} className="mr-2.5" />월 100만원
